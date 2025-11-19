@@ -149,9 +149,3 @@ Split `main.js` into:
 * `logic.js`
 * `ui.js`
 * `controls.js`
-
-✔ A Vercel deployment guide
-✔ A demo video script
-✔ A compressed submission zip
-
-Just let me know!
