@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Just Divide – Kid Mode</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-root">
+    <div id="game-wrapper">
+      <!-- HEADER -->
+      <header id="game-header">
+        <div class="header-left">
+          <button id="btn-menu" class="round-btn purple-btn">
+            <div class="pause-icon"></div>
+          </button>
+        </div>
+        <div class="header-center">
+          <h1>JUST DIVIDE</h1>
+          <div id="timer-row">
+            <span class="timer-icon">⏳</span>
+            <span id="timer-label">00:00</span>
+          </div>
+          <p class="subtitle">
+            DIVIDE WITH THE NUMBERS TO SOLVE THE ROWS AND COLUMNS.
+          </p>
+        </div>
+        <div class="header-right">
+          <button id="btn-help" class="round-btn green-btn">?</button>
+        </div>
+      </header>
+
+      <!-- MAIN CONTENT -->
+      <main id="game-main">
+        <!-- CENTER BLOCK: CAT + LEVEL/SCORE + GRID -->
+        <section id="center-block">
+          <!-- Cat and badges positioned above grid -->
+          <div id="cat-badge-container">
+            <div class="badge badge-level">
+              <span class="badge-text">LEVEL <span id="ui-level">1</span></span>
+            </div>
+            <img src="assets/Cat.png" alt="Cat" id="cat-img" />
+            <div class="badge badge-score">
+              <div class="score-container">
+                <div class="score-line">SCORE <span id="ui-score">0</span></div>
+                <div class="best-line">BEST <span id="ui-best-score">0</span></div>
+              </div>
+            </div>
+          </div>
+          <div id="grid-container">
+            <div id="grid"></div>
+          </div>
+        </section>
+
+        <!-- RIGHT VERTICAL ACTION PANEL -->
+        <section id="right-panel">
+          <div id="keep-trash-column">
+            <!-- KEEP -->
+            <div id="keep-panel">
+              <div class="panel-label keep-label">KEEP</div>
+              <div id="keep-slot" class="action-slot keep-slot-inner">
+                <div class="slot-content" id="keep-inner"></div>
+              </div>
+            </div>
+
+            <!-- UPCOMING STACK -->
+            <div id="stack-panel">
+              <div id="stack-top" class="action-slot active-slot">
+                <div class="slot-content" id="upcoming-top-slot"></div>
+              </div>
+              <div id="stack-next">
+                <div class="small-preview-slot" id="preview-1"></div>
+                <div class="small-preview-slot" id="preview-2"></div>
+              </div>
+            </div>
+
+            <!-- TRASH -->
+            <div id="trash-panel">
+              <div class="panel-label trash-label">TRASH</div>
+              <div id="trash-slot" class="action-slot trash-slot-inner">
+                <div class="slot-content trash-content">
+                  <div class="trash-icon">
+                    <div class="trash-can"></div>
+                  </div>
+                </div>
+              </div>
+              <div id="trash-counter">
+                X<span id="trash-count">10</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer id="game-footer">
+        <div id="message-area">Drag the top tile into the grid to start!</div>
+        <div style="font-size: 16px; font-weight: bold;">
+          Difficulty: <span id="difficulty-display">MEDIUM</span>
+          <br><small>(Press 1=Easy, 2=Medium, 3=Hard)</small>
+        </div>
+        <button id="btn-fullscreen" class="fs-btn" title="Toggle Fullscreen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+            <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+          </svg>
+        </button>
+      </footer>   
+    </div>
+  </div>
+  <!-- GAME OVER POPUP -->
+  <div id="game-over-overlay" class="game-over-overlay">
+    <div class="game-over-popup">
+      <h2>GAME OVER!</h2>
+      <div class="final-score">Final Score: <span id="popup-score">0</span></div>
+      <div class="best-score">Best Score: <span id="popup-best">0</span></div>
+      <div class="game-over-buttons">
+        <button class="game-over-btn btn-restart" id="btn-popup-restart">
+          RESTART
+        </button>
+        <button class="game-over-btn btn-close" id="btn-popup-close">
+          CLOSE
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
